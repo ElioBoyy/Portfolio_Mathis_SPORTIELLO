@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#mainContainer{
+    /*border: solid;
+    border-color: red;
+    border-width: 1px;*/
+
+    display: inline-flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+
+#mainPresentation{
+    margin: 0 auto;
+    width: 930px;
+
+    cursor: pointer;
+    text-align: center;
+    font-size:90px ;
+    user-select: none;
+
+    border: 8px solid;
+    border-color: #000;
+    -webkit-mask: conic-gradient(from 90deg at top 8px right 8px, #0000 0deg,#000 0)
+        var(--_i,200%) 0  /200% var(--_i,8px) border-box no-repeat,
+        conic-gradient(at bottom 8px left  8px,  #0000 90deg,#000 0) 0
+        var(--_i,200%)/var(--_i,8px) 200% border-box no-repeat,
+        linear-gradient(#000 0 0) padding-box no-repeat;
+    transition: .3s, -webkit-mask-position .3s .3s;
+}
+
+#mainPresentation:hover {
+    --_i: 100%;
+    transition: .3s, -webkit-mask-size .3s .3s;
+}
+
+#mainNavBar{
+    position: absolute;
+    width: 230px;
+    display: inline;
+    right: 15px;
+    height: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-left: solid black;
+    border-width: 0px;
+    padding-left: 50px;
+    padding-right: 35px;
+}
+
+.afficheApres{
+    position:relative;
+    width: 50%;
+    display: none;
+    width: auto;
+    margin-top: 56px;
+}
+
+#portfolio{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 45%;
+    font-size: 30px;
+}
+
+#imgMoi{
+    border-radius: 100%;
+    margin-left: 30px;
+}
+
+.menuSelector{
+    cursor: pointer;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.menuSelector::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+    transform: scaleX(0);
+}
+
+.menuSelector:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
